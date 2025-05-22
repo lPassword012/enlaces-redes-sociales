@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis Enlaces Sociales</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./styles/mobile.css">
+  <!-- Iconos de Lucide -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="tema-claro">
+  <div class="contenedor">
+    <header>
+      <button id="cambiarTema" class="boton-tema" aria-label="Cambiar tema">
+        <span class="icono-sol">☀️</span>
+        <span class="icono-luna">🌙</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="tarjeta-perfil">
+        <div class="marco-foto">
+          <img src="./images/profile.png" alt="Foto de perfil" class="foto-perfil">
+        </div>
+        <h1 class="nombre">Mauro</h1>
+        <p class="biografia">Data Analyst Student | Creador digital de contenido</p>
+      </section>
+
+      <section class="enlaces-sociales">
+        <a href="https://www.instagram.com/_mauro97/" class="enlace enlace-instagram" target="_blank">
+          <span class="icono" data-lucide="instagram"></span>
+          <span class="texto">Instagram</span>
+        </a>
+        <a href="https://x.com/_mauro97" class="enlace enlace-twitter" target="_blank">
+          <span class="icono" data-lucide="twitter"></span>
+          <span class="texto">Twitter</span>
+        </a>
+        <a href="https://github.com/lPassword012" class="enlace enlace-github" target="_blank">
+          <span class="icono" data-lucide="github"></span>
+          <span class="texto">GitHub</span>
+        </a>
+        <a href="https://www.threads.com/@_mauro97" class="enlace enlace-threads" target="_blank">
+          <span class="icono" data-lucide="message-circle"></span>
+          <span class="texto">Threads</span>
+        </a>
+        <a href="https://www.youtube.com/@lPassword012" class="enlace enlace-youtube" target="_blank">
+          <span class="icono" data-lucide="youtube"></span>
+          <span class="texto">YouTube</span>
+        </a>
+        <a href="https://www.linkedin.com/in/dev-mauricio/" class="enlace enlace-linkedin" target="_blank">
+          <span class="icono" data-lucide="linkedin"></span>
+          <span class="texto">LinkedIn</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="contador-visitantes">
+        <span class="icono" data-lucide="users"></span>
+        <span id="numeroVisitantes">Visitantes: 0</span>
+      </div>
+      <p class="copyright">© <span id="anioActual"></span> - Todos los derechos reservados</p>
+    </footer>
+  </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
