@@ -240,3 +240,180 @@ header {
   font-size: 0.75rem;
   color: var(--color-texto-secundario);
 }
+
+/* --- Botones de Acción y Formularios CRUD --- */
+
+/* Botón "Add New Link" */
+#addLinkButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px dashed var(--color-borde); /* Borde discontinuo para diferenciar */
+  background-color: var(--color-tarjeta);
+  color: var(--color-texto);
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 1.5rem; /* Espacio antes de la sección de enlaces */
+  transition: var(--transicion);
+  width: 100%; /* Ocupar todo el ancho como los otros bloques */
+  box-shadow: var(--sombra);
+}
+
+#addLinkButton:hover {
+  background-color: var(--color-borde);
+  border-style: solid; /* Borde sólido en hover */
+}
+
+#addLinkButton .icono {
+  margin-left: 0.5rem; /* Espacio entre texto e icono */
+}
+
+/* Formulario para agregar/editar enlaces (el que aparece arriba) */
+.add-link-form {
+  background-color: var(--color-tarjeta);
+  border: 2px solid var(--color-borde);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  box-shadow: var(--sombra);
+  transition: var(--transicion);
+}
+
+.add-link-form input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-size: 0.9rem;
+}
+
+.add-link-form button {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transicion);
+}
+
+/* Botón Guardar en el formulario de agregar */
+#saveNewLinkButton {
+  background-color: #28a745; /* Verde para guardar */
+  color: white;
+}
+
+#saveNewLinkButton:hover {
+  background-color: #218838;
+}
+
+/* Botón Cancelar en el formulario de agregar */
+#cancelNewLinkButton {
+  background-color: #6c757d; /* Gris para cancelar */
+  color: white;
+}
+
+#cancelNewLinkButton:hover {
+  background-color: #5a6268;
+}
+
+
+/* Contenedor de acciones en cada enlace (Edit/Delete) */
+.enlace .link-actions {
+  margin-left: auto; /* Empuja los botones a la derecha */
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity 0.2s ease-in-out;
+}
+
+.enlace:hover .link-actions {
+  opacity: 1; /* Visible en hover del enlace padre */
+}
+
+.link-actions button {
+  background: none;
+  border: 1px solid transparent; /* Para mantener tamaño sin fondo */
+  border-radius: 6px;
+  padding: 0.3rem; /* Más pequeño */
+  cursor: pointer;
+  color: var(--color-texto-secundario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-actions button:hover {
+  background-color: var(--color-borde);
+  color: var(--color-texto);
+}
+
+.link-actions button .icono {
+  margin-right: 0; /* Los iconos de estos botones no necesitan margen */
+  width: 16px; /* Iconos más pequeños */
+  height: 16px;
+}
+
+/* Estilos para los inputs y botones dentro de un enlace en modo edición */
+.enlace.editing {
+  /* El enlace <a> se convierte en un contenedor flex columnal */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Los hijos ocupan el ancho */
+  padding: 0.75rem; /* Ajustar padding si es necesario */
+  height: auto; /* Permitir que crezca */
+}
+
+.enlace.editing .link-actions {
+  display: none; /* Ocultar los botones de acción normales mientras se edita */
+}
+
+.enlace.editing input[type="text"],
+.enlace.editing button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem; /* Espacio entre elementos del formulario de edición */
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.enlace.editing input[type="text"] {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.enlace.editing button {
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transicion);
+}
+
+/* Botón Guardar en modo edición de enlace */
+.enlace.editing .edit-link-save {
+  background-color: #28a745; /* Verde */
+  color: white;
+}
+.enlace.editing .edit-link-save:hover {
+  background-color: #218838;
+}
+
+/* Botón Cancelar en modo edición de enlace */
+.enlace.editing .edit-link-cancel {
+  background-color: #dc3545; /* Rojo */
+  color: white;
+}
+.enlace.editing .edit-link-cancel:hover {
+  background-color: #c82333;
+}
+
+/* Ocultar el icono y texto originales mientras se edita el enlace */
+.enlace.editing > .icono,
+.enlace.editing > .texto {
+  display: none;
+}
